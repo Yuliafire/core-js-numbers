@@ -84,8 +84,15 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
+
+// находим корень линейного уравнения вида ax + b = 0.
+// Для этого необходимо найти значение x, при котором уравнение будет равно 0.
+
 function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+  if (a === 0) {
+    throw new Error('a can not be equal to zero');
+  }
+  return -b /a;
 }
 
 /**
@@ -122,9 +129,11 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  const lastDigitString = value.toString().slice(-1);
+  return parseInt(lastDigitString, 10);
 }
+// 10 - десятичная система счисления
 
 /**
  * Returns a number by given string representation.
@@ -197,8 +206,17 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+
+// Функция isPrime предназначена для проверки,
+// является ли заданное число простым.
+// Простое число — это число больше 1,
+// которое делится только на 1 и на само себя.
+
+function isPrime(n) {
+  // if ((n % n) && (n % 1) === 0) {
+  //   return true;
+  // }
+  // return false;
 }
 
 /**
@@ -216,8 +234,13 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+
+function toNumber(value, def) {
+ const number = Number(value);
+    if(!isNaN(number)) {
+      return number;
+    }
+    return def;
 }
 
 /**
