@@ -163,8 +163,8 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+   return Math.sqrt(a * a + b * b + c ** c);
 }
 
 /**
@@ -407,8 +407,8 @@ function toPrecision(number, precision) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+   return number.valueOf();
 }
 
 /**
@@ -455,8 +455,8 @@ function isInteger(number) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+   return parseFloat(str);
 }
 
 /**
@@ -502,8 +502,8 @@ function isSafeInteger(number) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+ return Math.floor(number);
 }
 
 /**
@@ -516,8 +516,8 @@ function roundToSmallestInteger(/* number */) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToLargestInteger(number) {
+ return Math.ceil(number);
 }
 
 /**
@@ -546,8 +546,8 @@ function roundToNearestInteger(number) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
+function getIntegerPartNumber(number) {
+  return number < 0 ? Math.ceil(number) : Math.floor(number);
 }
 
 /**
@@ -626,8 +626,14 @@ function getHypotenuse( a, b ) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+   let count = 0;
+   for (let i = 0; i <= number; i++) {
+      if (i % 2 !== 0) {
+        count++;
+      }
+   }
+   return count;
 }
 
 module.exports = {
