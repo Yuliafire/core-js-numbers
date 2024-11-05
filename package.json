@@ -23,11 +23,13 @@
     "mocha": "^10.2.0",
     "prettier": "^3.0.3"
   },
+  "eslintConfig": {
+    "rules": {
+      "no-plusplus": "off"
+      }
+    },
   "bugs": {
     "url": "https://github.com/rolling-scopes-school/core-js-numbers/issues"
   },
   "homepage": "https://github.com/rolling-scopes-school/core-js-numbers#readme"
 }
-
-
-

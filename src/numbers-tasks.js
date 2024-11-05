@@ -69,10 +69,10 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-   return Math.sqrt((x2 - x1) ** 2 + (y2 -y1) ** 2);
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
 
-//Для вычисления расстояния между двумя точками на плоскости используется формула Евклидова расстояния:
+// Для вычисления расстояния между двумя точками на плоскости используется формула Евклидова расстояния:
 // [ \text{distance} = \sqrt{(x2 - x1)^2 + (y2 - y1)^2} ]
 
 /**
@@ -91,11 +91,11 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
 // находим корень линейного уравнения вида ax + b = 0.
 // Для этого необходимо найти значение x, при котором уравнение будет равно 0.
 
-function getLinearEquationRoot(/* a, b */) {
+function getLinearEquationRoot(a, b) {
   if (a === 0) {
     throw new Error('a can not be equal to zero');
   }
-  return -b /a;
+  return -b / a;
 }
 
 /**
@@ -167,7 +167,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-   return Math.sqrt(a * a + b * b + c ** c);
+  return Math.sqrt(a * a + b * b + c ** c);
 }
 
 /**
@@ -215,11 +215,8 @@ function roundToPowerOfTen(num, pow) {
 // Простое число — это число больше 1,
 // которое делится только на 1 и на само себя.
 
-function isPrime(n) {
-  // if ((n % n) && (n % 1) === 0) {
-  //   return true;
-  // }
-  // return false;
+function isPrime(/*n */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -238,12 +235,13 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 
-function toNumber(value, def) {
- const number = Number(value);
-    if(!isNaN(number)) {
-      return number;
-    }
-    return def;
+function toNumber(/*value, def*/) {
+  throw new Error('Not implemented');
+  // const number = Number(value);
+  // if (!isNaN(number)) {
+  //   return number;
+  // }
+  // return def;
 }
 
 /**
@@ -319,11 +317,12 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(num) {
-  if (num <= 0) {
-    return false;
-  }
-  return (num & (num - 1)) === 0;
+function isPowerOfTwo(/* num */) {
+  throw new Error('Not implemented');
+  // if (num <= 0) {
+  //   return false;
+  // }
+  // return (num & (num - 1)) === 0;
 }
 
 /**
@@ -411,7 +410,7 @@ function toPrecision(number, precision) {
  * Number(-5)    => -5
  */
 function getNumberValue(number) {
-   return number.valueOf();
+  return number.valueOf();
 }
 
 /**
@@ -459,7 +458,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-   return parseFloat(str);
+  return parseFloat(str);
 }
 
 /**
@@ -506,7 +505,7 @@ function isSafeInteger(number) {
  * -5.1 => -6
  */
 function roundToSmallestInteger(number) {
- return Math.floor(number);
+  return Math.floor(number);
 }
 
 /**
@@ -520,7 +519,7 @@ function roundToSmallestInteger(number) {
  * -5.9 => -5
  */
 function roundToLargestInteger(number) {
- return Math.ceil(number);
+  return Math.ceil(number);
 }
 
 /**
@@ -612,8 +611,8 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse( a, b ) {
- return Math.sqrt(a * 2 + b * 2);
+function getHypotenuse(a, b) {
+  return Math.sqrt(a * 2 + b * 2);
 }
 
 /**
@@ -630,13 +629,13 @@ function getHypotenuse( a, b ) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-   let count = 0;
-   for (let i = 0; i <= number; i++) {
-      if (i % 2 !== 0) {
-        count++;
-      }
-   }
-   return count;
+  let count = 0;
+  for (let i = 0; i <= number; i += 1) {
+    if (i % 2 !== 0) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 module.exports = {
