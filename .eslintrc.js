@@ -1,25 +1,26 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
-    node: true // Добавлено для поддержки Node.js
+    commonjs: true,
+    es6: true,
+    node: true,
+    mocha: true,
   },
-  extends: "eslint:recommended",
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
   parserOptions: {
-    ecmaVersion: 12,
-    sourceType: "module"
+    ecmaVersion: 2018,
   },
   rules: {
-    "no-undef": "error",
-    "no-unused-vars": "warn",
-    "no-restricted-globals": ["error", "isNaN"],
-    "no-bitwise": "warn"
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
-  globals: {
-    module: "readonly",
-    require: "readonly",
-    describe: "readonly",
-    it: "readonly"
-  }
+  plugins: ['prettier'],
+  noInlineConfig: true,
 };
-

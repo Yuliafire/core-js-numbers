@@ -133,8 +133,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const lastDigitString = value.toString().slice(-1);
-  return parseInt(lastDigitString, 10);
+  const str = value.toString();
+  return parseInt(str.charAt(str.length - 1), 10);
 }
 // 10 - десятичная система счисления
 
@@ -215,7 +215,7 @@ function roundToPowerOfTen(num, pow) {
 // Простое число — это число больше 1,
 // которое делится только на 1 и на само себя.
 
-function isPrime(/*n */) {
+function isPrime(/* n */) {
   throw new Error('Not implemented');
 }
 
@@ -235,7 +235,7 @@ function isPrime(/*n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 
-function toNumber(/*value, def*/) {
+function toNumber(/* value, def */) {
   throw new Error('Not implemented');
   // const number = Number(value);
   // if (!isNaN(number)) {
