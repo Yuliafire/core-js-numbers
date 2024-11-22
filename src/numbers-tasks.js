@@ -115,8 +115,18 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  // Вычисляем скалярное произведение
+  const dotProduct = x1 * x2 + y1 * y2;
+
+  // Вычисляем длины векторов
+  const magnitude1 = Math.sqrt(x1 * x1 + y1 * y1);
+  const magnitude2 = Math.sqrt(x2 * x2 + y2 * y2);
+
+  // Вычисляем угол между векторами
+  const angle = Math.acos(dotProduct / (magnitude1 * magnitude2));
+
+  return angle;
 }
 
 /**
@@ -215,8 +225,22 @@ function roundToPowerOfTen(num, pow) {
 // Простое число — это число больше 1,
 // которое делится только на 1 и на само себя.
 
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  if (n <= 1) {
+    return false;
+  }
+  if (n === 2) {
+    return true;
+  }
+  if (n % 2 === 0) {
+    return false;
+  }
+  for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
@@ -235,13 +259,9 @@ function isPrime(/* n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
-  // const number = Number(value);
-  // if (!isNaN(number)) {
-  //   return number;
-  // }
-  // return def;
+function toNumber(value, def) {
+  const num = Number(value);
+  return Number.isNaN(num) ? def : num;
 }
 
 /**
