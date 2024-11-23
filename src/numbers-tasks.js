@@ -143,8 +143,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const str = value.toString();
-  return parseInt(str.charAt(str.length - 1), 10);
+  return Math.abs(value) % 10;
 }
 // 10 - десятичная система счисления
 
@@ -504,7 +503,8 @@ function getFloatOnString(str) {
  * '10', 8              => 8
  */
 function getIntegerOnString(str, base) {
-  return parseInt(str, base);
+  const parsed = parseInt(str, base);
+  return Number.isNaN(parsed) ? NaN : Math.trunk(parsed);
 }
 
 /**
@@ -577,7 +577,7 @@ function roundToNearestInteger(number) {
  * -5.5 => -5
  */
 function getIntegerPartNumber(number) {
-  return number < 0 ? Math.ceil(number) : Math.floor(number);
+  return Math.trunc(number);
 }
 
 /**
@@ -609,7 +609,7 @@ function getSumOfNumbers(x1, x2, x3) {
  * 0, 5   => 5
  */
 function getMaxNumber(firstNumber, secondNumber) {
-  return firstNumber > secondNumber ? firstNumber : secondNumber;
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -640,7 +640,7 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  return Math.sqrt(a * 2 + b * 2);
+  return Math.sqrt(a * a + b * b);
 }
 
 /**
